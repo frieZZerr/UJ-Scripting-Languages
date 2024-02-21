@@ -1,0 +1,69 @@
+# Każdy z użytych w skryptach plików tekstowych miał rozmiar 131MB
+
+
+
+Czasy wykonania bez przekazania opcji:
+
+	time ./script1.py 1.txt 2.txt 3.txt 4.txt:
+		- 	real    0m3.491s
+			user    0m0.882s
+			sys     0m0.260s
+		- 	real    0m3.604s
+			user    0m0.908s
+			sys     0m0.213s
+		- 	real    0m3.690s
+			user    0m0.824s
+			sys     0m0.292s
+
+			AVERAGE TIME:
+			real    0m3.595s
+
+	time ./script5.pl 1.txt 2.txt 3.txt 4.txt:
+		- 	real    0m3.356s
+			user    0m0.439s
+			sys     0m0.338s
+		- 	real    0m3.280s
+			user    0m0.473s
+			sys     0m0.321s
+		- 	real    0m3.280s
+			user    0m0.452s
+			sys     0m0.329s
+
+			AVERAGE TIME:
+			real    0m3.305s
+
+
+Czasy wykonania z przekazanymi opcjami:
+
+	time ./script1.py 1.txt 2.txt 3.txt 4.txt -c -N:
+		- 	real    0m4.230s
+			user    0m1.393s
+			sys     0m0.305s
+		- 	real    0m4.306s
+			user    0m1.415s
+			sys     0m0.277s
+		- 	real    0m4.187s
+			user    0m1.416s
+			sys     0m0.288s
+
+			AVERAGE TIME:
+			real    0m4.241s
+
+	time ./script5.pl 1.txt 2.txt 3.txt 4.txt -c -N:
+		- 	real    0m3.685s
+			user    0m0.914s
+			sys     0m0.251s
+		- 	real    0m3.596s
+			user    0m0.848s
+			sys     0m0.248s
+		- 	real    0m3.674s
+			user    0m0.870s
+			sys     0m0.270s
+
+			AVERAGE TIME:
+			real    0m3.651s
+
+
+Obserwacje:
+	- Średni czas wykonania skryptów bez przekazywania opcji niewiele się różni, jednak różnice tę widać dobrze kiedy przekażemy opcjonalne flagi. Widać, że python nieco gorzej (wolniej) sobie radzi z wykonywaniem obliczeń niż perl.
+	- Czas wykonywania dla skryptu napisanego w pythonie wzrósł o 18%, natomiast w perlu tylko o 10%.

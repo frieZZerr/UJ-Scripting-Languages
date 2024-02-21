@@ -1,0 +1,38 @@
+# Każdy z użytych w skryptach plików tekstowych miał rozmiar 19MB (Milion linii)
+
+
+
+Czasy wykonania:
+
+	time python3 script1.py 1.txt 2.txt:
+		- 	real    0m4.359s
+			user    0m3.673s
+			sys     0m0.219s
+		- 	real    0m4.319s
+			user    0m3.591s
+			sys     0m0.239s
+		- 	real    0m4.349s
+			user    0m3.656s
+			sys     0m0.211s
+
+			AVERAGE TIME:
+			real    0m4.342s
+
+	time perl script1.pl 1.txt 2.txt:
+		- 	real    0m7.920s
+			user    0m6.926s
+			sys     0m0.181s
+		- 	real    0m8.013s
+			user    0m6.949s
+			sys     0m0.203s
+		- 	real    0m8.048s
+			user    0m6.952s
+			sys     0m0.210s
+
+			AVERAGE TIME:
+			real    0m7.993s
+
+
+Obserwacje:
+	- Średni czas wykonania skryptów pokazuje, że w tym przypadku python poradził sobie prawie 2 razy lepiej niz perl.
+	- Można zaobserwować, że zastosowanie słowników w pythonie jest szybsze i efektywniejsze niż w perlu.

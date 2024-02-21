@@ -1,0 +1,69 @@
+# Każdy z użytych w skryptach plików tekstowych miał rozmiar 128MB
+
+
+
+Czasy wykonania bez przekazania opcji:
+
+	time python3 script1.py 1.txt 2.txt:
+		- 	real    0m23.213s
+			user    0m15.106s
+			sys     0m0.453s
+		- 	real    0m27.591s
+			user    0m17.438s
+			sys     0m0.845s
+		- 	real    0m23.228s
+			user    0m15.326s
+			sys     0m0.704s
+
+			AVERAGE TIME:
+			real    0m24.677s
+
+	time perl script1.pl 1.txt 2.txt:
+		- 	real    0m4.814s
+			user    0m1.450s
+			sys     0m0.399s
+		- 	real    0m4.894s
+			user    0m1.320s
+			sys     0m0.416s
+		- 	real    0m5.344s
+			user    0m1.381s
+			sys     0m0.418s
+
+			AVERAGE TIME:
+			real    0m5.0173s
+
+
+Czasy wykonania z przekazanymi opcjami:
+
+	time python3 script1.py 1.txt 2.txt -i -d:
+		- 	real    1m49.644s
+			user    1m40.022s
+			sys     0m0.821s
+		- 	real    1m50.992s
+			user    1m40.326s
+			sys     0m0.813s
+		- 	real    1m45.932s
+			user    1m37.848s
+			sys     0m0.738s
+
+			AVERAGE TIME:
+			real    1m48.856s
+
+	time perl script1.pl 1.txt 2.txt -i -d:
+		- 	real    0m13.619s
+			user    0m7.299s
+			sys     0m0.403s
+		- 	real    0m14.107s
+			user    0m7.362s
+			sys     0m0.583s
+		- 	real    0m13.670s
+			user    0m7.406s
+			sys     0m0.415s
+
+			AVERAGE TIME:
+			real    0m13.798s
+
+
+Obserwacje:
+	- Średni czas wykonania skryptów bez przekazywania opcji pokazuje, że dużo lepiej perl radzi sobie w przypadku zliczania konkretnych rzeczy z plików.
+	- W przypadku czasu wykonania z przekazywaniem opcji do dodatkowego zliczania liczb różnica czasu kolosalnie się zwiększa i pokazuje, że skrypt w perlu działa prawie 8 razy szybciej niż w pythonie

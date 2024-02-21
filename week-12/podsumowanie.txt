@@ -1,0 +1,53 @@
+# Każdy z użytych w skryptach plików tekstowych miał rozmiar odpowiednio 120MB oraz 60MB
+
+
+
+Czasy wykonania:
+
+	time python3 grep.py -d . -d xd TAK -d xd NIE:
+		- 	real    0m5.097s
+			user    0m2.069s
+			sys     0m0.418s
+		- 	real    0m5.119s
+			user    0m1.948s
+			sys     0m0.373s
+		- 	real    0m5.010s
+			user    0m1.967s
+			sys     0m0.353s
+
+			AVERAGE TIME:
+			real    0m5.075s
+
+	time ./grep.pl -d . -d xd TAK -d xd NIE:
+		- 	real    0m5.503s
+			user    0m2.532s
+			sys     0m0.350s
+		- 	real    0m5.438s
+			user    0m2.515s
+			sys     0m0.373s
+		- 	real    0m5.293s
+			user    0m2.557s
+			sys     0m0.340s
+
+			AVERAGE TIME:
+			real    0m5.411s
+
+	*Tutaj został użyty tyko 1 zmodyfikowany plik o rozmiarze 30MB, ponieważ skrypt radził sobie dużo wolniej
+	time ./grep.sh -d xd NIE:
+		- 	real    0m52.639s
+			user    0m8.365s
+			sys     0m5.958s
+		- 	real    0m50.308s
+			user    0m7.924s
+			sys     0m5.275s
+		- 	real    0m50.691s
+			user    0m8.459s
+			sys     0m5.166s
+
+			AVERAGE TIME:
+			real    0m51.212s
+
+
+Obserwacje:
+	- Średni czas wykonania skryptów pokazuje, że w tym przypadku python oraz perl zdecydowanie lepiej radzą sobie z przeszukiwaniem wgłąb.
+	- Bash był na tyle wolny, że do testów potrzeba było znacznie zmniejszyć rozmiar plików w directories (ponad 10 razy wolniej w porównaniu do pythona oraz perla).
